@@ -1,1 +1,43 @@
-Hello
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Current Weather Conditions in Gatineau, Quebec, Canada</title>
+
+        <link rel="stylesheet" href="/tcort.css">
+    </head>
+    <body>
+
+        <header>
+            <h1>Current Weather Conditions in Gatineau, Quebec, Canada</h1>
+            <div>as of {{timestamp}}</div>
+        </header>
+
+        <main>
+            <section>
+                <h2>Temperature</h2>
+                <div>{{temperature}}&deg; C</div>
+            </section>
+            <section>
+                <h2>Humidity</h2>
+                <div>{{humidity}}%</div>
+            </section>
+        </main>
+
+        <footer>
+            <p>
+                <small>
+                    Copyright &copy; 2024 Thomas Cort
+                </small>
+            </p>
+        </footer>
+
+        <script src="/jquery.min.js"></script>
+        <script src="/tcort.js"></script>
+
+    </body>
+</html>
