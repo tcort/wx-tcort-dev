@@ -1,5 +1,6 @@
 'use strict';
 
+const config = require('/usr/local/etc/wx.tcort.dev.json');
 const cors = require('cors');
 const express = require('express');
 const http = require('http');
@@ -25,7 +26,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 app.set('etag', true);
 
-app.use(require('./lib/routes')());
+app.use(require('./lib/routes')(config));
 
 /* launch the server */
 server.listen(process.env.HTTP_PORT ?? 3000, 'localhost', function () {
