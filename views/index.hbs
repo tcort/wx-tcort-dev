@@ -12,19 +12,24 @@
     </head>
     <body>
 
-        <header>
-            <h1>Current Weather Conditions in Gatineau, Quebec, Canada</h1>
-            <div>as of {{timestamp}} Eastern</div>
-        </header>
-
         <main>
             <section>
-                <h2>Temperature</h2>
-                <div>{{temperature}}&deg; C</div>
-            </section>
-            <section>
-                <h2>Humidity</h2>
-                <div>{{humidity}}%</div>
+                <h2>Gatineau, Quebec, Canada</h2>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th scope="ltr">Temperature</th>
+                            <td>{{temperature}}&deg;C</td>
+                        </tr>
+                        <tr>
+                            <th scope="ltr">Humidity</th>
+                            <td>{{humidity}}%</td>
+                        </tr>
+                        <tr>
+                            <th scope="ltr">Last update</th>
+                            <td>{{timestamp}}</td>
+                    </tbody>
+                </table>
             </section>
         </main>
 
