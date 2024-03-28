@@ -1,0 +1,21 @@
+{
+  "name": "wx-tcort-dev",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Thomas Cort <tcort@tcort.dev>",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "hbs": "^4.2.0",
+    "lodash": "^4.17.21",
+    "method-override": "^3.0.0",
+    "moment": "^2.30.1",
+    "qs": "^6.12.0",
+    "sqlite3": "^5.1.7"
+  }
+}
