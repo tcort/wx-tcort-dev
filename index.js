@@ -29,6 +29,6 @@ app.set('etag', true);
 app.use(require('./lib/routes')(config));
 
 /* launch the server */
-server.listen(process.env.HTTP_PORT ?? 3000, 'localhost', function () {
+server.listen(process.env.HTTP_PORT ?? 4000, 'localhost', function () {
     console.log('service up: http://localhost:3000/');
 });
