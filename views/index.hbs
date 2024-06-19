@@ -15,19 +15,23 @@
         <main>
             <section>
                 <h2>Gatineau, Quebec, Canada</h2>
+                <p>Last update: {{timestamp}}</p>
                 <table>
                     <tbody>
                         <tr>
                             <th scope="ltr">Temperature</th>
-                            <td>{{temperature}}&deg;C</td>
+                            <td>{{temperature_c}}&deg;C</td>
+                            <td>{{temperature_f}}&deg;F</td>
                         </tr>
                         <tr>
-                            <th scope="ltr">Humidity</th>
-                            <td>{{humidity}}%</td>
+                            <th scope="ltr">Heat Index</th>
+                            <td>{{heat_index_c}}&deg;C</td>
+                            <td>{{heat_index_f}}&deg;F</td>
                         </tr>
                         <tr>
-                            <th scope="ltr">Last update</th>
-                            <td>{{timestamp}}</td>
+                            <th scope="ltr">Relative Humidity</th>
+                            <td colspan="2">{{relative_humidity}}%</td>
+                        </tr>
                     </tbody>
                 </table>
             </section>
@@ -39,33 +43,45 @@
                 <table>
                     <tr>
                         <th scope="col">Period</th>
-                        <th scope="col">Min</th>
-                        <th scope="col">Avg</th>
-                        <th scope="col">Max</th>
+                        <th scope="col" colspan="2">Min</th>
+                        <th scope="col" colspan="2">Avg</th>
+                        <th scope="col" colspan="2">Max</th>
                     </tr>
                     <tr>
                         <th scope="ltr">Last 24 Hours</th>
-                        <td>{{stats.lastDay.min}}&deg;C</td>
-                        <td>{{stats.lastDay.avg}}&deg;C</td>
-                        <td>{{stats.lastDay.max}}&deg;C</td>
+                        <td>{{stats.lastDay.min_c}}&deg;C</td>
+                        <td>{{stats.lastDay.min_f}}&deg;F</td>
+                        <td>{{stats.lastDay.avg_c}}&deg;C</td>
+                        <td>{{stats.lastDay.avg_f}}&deg;F</td>
+                        <td>{{stats.lastDay.max_c}}&deg;C</td>
+                        <td>{{stats.lastDay.max_f}}&deg;F</td>
                     </tr>
                     <tr>
                         <th scope="ltr">Last 7 Days</th>
-                        <td>{{stats.lastWeek.min}}&deg;C</td>
-                        <td>{{stats.lastWeek.avg}}&deg;C</td>
-                        <td>{{stats.lastWeek.max}}&deg;C</td>
+                        <td>{{stats.lastWeek.min_c}}&deg;C</td>
+                        <td>{{stats.lastWeek.min_f}}&deg;F</td>
+                        <td>{{stats.lastWeek.avg_c}}&deg;C</td>
+                        <td>{{stats.lastWeek.avg_f}}&deg;F</td>
+                        <td>{{stats.lastWeek.max_c}}&deg;C</td>
+                        <td>{{stats.lastWeek.max_f}}&deg;F</td>
                     </tr>
                     <tr>
                         <th scope="ltr">Last 30 Days</th>
-                        <td>{{stats.lastMonth.min}}&deg;C</td>
-                        <td>{{stats.lastMonth.avg}}&deg;C</td>
-                        <td>{{stats.lastMonth.max}}&deg;C</td>
+                        <td>{{stats.lastMonth.min_c}}&deg;C</td>
+                        <td>{{stats.lastMonth.min_f}}&deg;F</td>
+                        <td>{{stats.lastMonth.avg_c}}&deg;C</td>
+                        <td>{{stats.lastMonth.avg_f}}&deg;F</td>
+                        <td>{{stats.lastMonth.max_c}}&deg;C</td>
+                        <td>{{stats.lastMonth.max_f}}&deg;F</td>
                     </tr>
                     <tr>
                         <th scope="ltr">All Time</th>
-                        <td>{{stats.allTime.min}}&deg;C</td>
-                        <td>{{stats.allTime.avg}}&deg;C</td>
-                        <td>{{stats.allTime.max}}&deg;C</td>
+                        <td>{{stats.allTime.min_c}}&deg;C</td>
+                        <td>{{stats.allTime.min_f}}&deg;F</td>
+                        <td>{{stats.allTime.avg_c}}&deg;C</td>
+                        <td>{{stats.allTime.avg_f}}&deg;F</td>
+                        <td>{{stats.allTime.max_c}}&deg;C</td>
+                        <td>{{stats.allTime.max_f}}&deg;F</td>
                     </tr>
                 </table>
             </section>
