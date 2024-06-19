@@ -30,5 +30,5 @@ app.use(require('./lib/routes')(config));
 
 /* launch the server */
 server.listen(process.env.HTTP_PORT ?? 4000, 'localhost', function () {
-    console.log('service up: http://localhost:3000/');
+    console.log('service up: http://localhost:4000/');
 });

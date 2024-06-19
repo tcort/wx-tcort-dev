@@ -31,6 +31,44 @@
                     </tbody>
                 </table>
             </section>
+            <section>
+                <h3>Historical Statistics</h3>
+                <p>
+                    Compiled from {{stats.nevents}} events captured between {{stats.first}} and {{stats.last}}
+                <p>
+                <table>
+                    <tr>
+                        <th scope="col">Period</th>
+                        <th scope="col">Min</th>
+                        <th scope="col">Avg</th>
+                        <th scope="col">Max</th>
+                    </tr>
+                    <tr>
+                        <th scope="ltr">Last 24 Hours</th>
+                        <td>{{stats.lastDay.min}}&deg;C</td>
+                        <td>{{stats.lastDay.avg}}&deg;C</td>
+                        <td>{{stats.lastDay.max}}&deg;C</td>
+                    </tr>
+                    <tr>
+                        <th scope="ltr">Last 7 Days</th>
+                        <td>{{stats.lastWeek.min}}&deg;C</td>
+                        <td>{{stats.lastWeek.avg}}&deg;C</td>
+                        <td>{{stats.lastWeek.max}}&deg;C</td>
+                    </tr>
+                    <tr>
+                        <th scope="ltr">Last 30 Days</th>
+                        <td>{{stats.lastMonth.min}}&deg;C</td>
+                        <td>{{stats.lastMonth.avg}}&deg;C</td>
+                        <td>{{stats.lastMonth.max}}&deg;C</td>
+                    </tr>
+                    <tr>
+                        <th scope="ltr">All Time</th>
+                        <td>{{stats.allTime.min}}&deg;C</td>
+                        <td>{{stats.allTime.avg}}&deg;C</td>
+                        <td>{{stats.allTime.max}}&deg;C</td>
+                    </tr>
+                </table>
+            </section>
         </main>
 
         <footer>
