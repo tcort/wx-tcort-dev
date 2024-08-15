@@ -34,42 +34,11 @@
                 </table>
             </section>
             <section>
-                <h3>Historical Statistics</h3>
+                <h3>Historical Data</h3>
                 <p>
                     Compiled from {{stats.nevents}} events captured between {{stats.first}} and {{stats.last}}
                 <p>
-                <table>
-                    <tr>
-                        <th scope="col">Period</th>
-                        <th scope="col">Low</th>
-                        <th scope="col">Avg</th>
-                        <th scope="col">High</th>
-                    </tr>
-                    <tr>
-                        <th scope="ltr">Last 24 Hours</th>
-                        <td>{{stats.lastDay.min_c}}&deg;C</td>
-                        <td>{{stats.lastDay.avg_c}}&deg;C</td>
-                        <td>{{stats.lastDay.max_c}}&deg;C</td>
-                    </tr>
-                    <tr>
-                        <th scope="ltr">Last 7 Days</th>
-                        <td>{{stats.lastWeek.min_c}}&deg;C</td>
-                        <td>{{stats.lastWeek.avg_c}}&deg;C</td>
-                        <td>{{stats.lastWeek.max_c}}&deg;C</td>
-                    </tr>
-                    <tr>
-                        <th scope="ltr">Last 30 Days</th>
-                        <td>{{stats.lastMonth.min_c}}&deg;C</td>
-                        <td>{{stats.lastMonth.avg_c}}&deg;C</td>
-                        <td>{{stats.lastMonth.max_c}}&deg;C</td>
-                    </tr>
-                    <tr>
-                        <th scope="ltr">All Time</th>
-                        <td>{{stats.allTime.min_c}}&deg;C</td>
-                        <td>{{stats.allTime.avg_c}}&deg;C</td>
-                        <td>{{stats.allTime.max_c}}&deg;C</td>
-                    </tr>
-                </table>
+                <canvas id="line-chart"></canvas>
             </section>
         </main>
 
@@ -83,6 +52,58 @@
 
         <script src="/jquery.min.js"></script>
         <script src="/tcort.js"></script>
+        <script src="/chartjs/package/dist/chart.umd.js"></script>
+
+        <script>
+
+        new Chart(document.getElementById("line-chart"), {
+        type: 'line',
+        data: {
+            labels: [
+                    {{#each stats.byMonth}}"{{d}}",
+                    {{/each}}
+            ],
+            datasets: [
+                { 
+                    data: [
+                        {{#each stats.byMonth}}{{min}},
+                        {{/each}}
+                    ],
+                    label: "Min",
+                    tension: 0.69,
+                    borderColor: "#3e95cd",
+                    fill: +2 
+                },
+                { 
+                    data: [
+                        {{#each stats.byMonth}}{{avg}},
+                        {{/each}}
+                    ],
+                    label: "Average",
+                    tension: 0.69,
+                    borderColor: "#95cd3e",
+                    fill: false,
+                },
+                { 
+                    data: [
+                        {{#each stats.byMonth}}{{max}},
+                        {{/each}}
+                    ],
+                    label: "Max",
+                    tension: 0.69,
+                    borderColor: "#cd3e95",
+                    fill:false 
+                }
+            ]
+        },
+        options: {
+            title: {
+            display: true,
+            text: 'World population per region (in millions)'
+            }
+        }
+        });
+        </script>
 
     </body>
 </html>
